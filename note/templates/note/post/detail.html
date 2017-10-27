@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <p class="date">{{ post.created }} 由 {{ post.author }}记录</p>
+    <p>上传文件的下载链接</p>
+    {% for file_name in post.file_name_dir %}
+    <h2>
+        //<p>{{ file_name }}</p>  # 问题是file_name传过来的不是list中的元素，而是list中的每个字符
+// <a href="{% url 'note:file_download' createdtime=post.created author_id=post.author_id file_name=file_name %}">哈哈|</a>           
+
+    </h2>
+    {% endfor %}    
+    {{ post.summary|linebreaks }}
+{% endblock %}

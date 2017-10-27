@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}post success{% endblock %}
+
+{% block content %}
+    <h1>成功 {{ name }}!</h1>
+    <p>记录已经被录入你可以 <a href="{% url "dashboard" %}">查看</a>.</p>
+{% endblock %}
